@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>坦克大战- by 伍超</title>
+<style>
+	th{
+		border-right:1px solid #666;
+		border-bottom:1px solid #666;
+		padding:3px;
+		font-size:12px;
+	}
+</style>
+</head>
+
+<body style="background:#EFEFEF">
+<div style="position:absolute;left:50%;margin-left:-208px;top:50%;margin-top:-176px;">
+	<canvas width="416px" height="352px" id="tankcanvas" style="background:#000; float:left;color:#33F;border:3px solid #6699FF;left:0;top:0;"></canvas>
+    <div style="float:right;">
+        <table style="border-top:1px solid #999;border-left:1px solid #999; margin-left:10px;" cellpadding="0" cellspacing="0">
+        	<tr>
+            	<th colspan="3">键位说明</th>
+            </tr>
+        	<tr>
+            	<th>操作/玩家</th>
+            	<th>1P</th>
+            	<th>2P</th>
+            </tr>
+        	<tr>
+            	<th>上</th>
+            	<th>W</th>
+            	<th>↑</th>
+            </tr>
+        	<tr>
+            	<th>右</th>
+            	<th>D</th>
+            	<th>→</th>
+            </tr>
+        	<tr>
+            	<th>下</th>
+            	<th>S</th>
+            	<th>↓</th>
+            </tr>
+        	<tr>
+            	<th>左</th>
+            	<th>A</th>
+            	<th>←</th>
+            </tr>
+        	<tr>
+            	<th>暂停/开始</th>
+            	<th>ENTER</th>
+            	<th>ENTER</th>
+            </tr>
+        	<tr>
+            	<th>上一关</th>
+            	<th>P</th>
+            	<th>P</th>
+            </tr>
+        	<tr>
+            	<th>下一关</th>
+            	<th>N</th>
+            	<th>N</th>
+            </tr>
+        </table>
+    </div>
+    <div style="clear:both;"></div>
+</div>
+<audio src="audio/attack.mp3" id="attacksound"></audio>
+<audio src="audio/move.mp3" id="movesound"></audio>
+<audio src="audio/start.mp3" id="startsound"></audio>
+<audio src="audio/bulletCrack.mp3" id="bulletCracksound"></audio>
+<audio src="audio/playerCrack.mp3" id="playerCracksound"></audio>
+<audio src="audio/tankCrack.mp3" id="tankCracksound"></audio>
+<audio src="audio/prop.mp3" id="propsound"></audio>
+</body>
+</html>
+<script>
+	window.onload = function() {
+		if (!window.applicationCache) {
+			setTimeout(function(){
+				document.write("当前古董级浏览器不支持HTML5，请升级到现代浏览器")
+			},1000);
+		}
+	}
+</script>
+<script src="js/all.class.js"></script>
+<script src="js/all.draw.js"></script>
+<script src="js/comm.func.js"></script>
+<script src="js/tank.func.js"></script>
+<script src="js/wall.func.js"></script>
+<script src="js/bullet.func.js"></script>
+<script src="js/cg.func.js"></script>
+<script src="js/bomb.func.js"></script>
+<script src="js/buffer.func.js"></script>
+<script src="js/sys.mission.js"></script>
+<script src="js/tank.data.js"></script>
+<script src="js/wall.data.js"></script>
+<script src="js/key.event.js"></script>
+<script src="js/sys.init.js"></script>
+<script>
+	notice();
+	cxt.clearRect(0,0,9999,9999);
+	//菜单界面
+	overCG();
+</script>
